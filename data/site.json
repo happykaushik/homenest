@@ -1,0 +1,37 @@
+{
+ "stats": [
+  [
+   "1,200+",
+   "Properties sold"
+  ],
+  [
+   "18 yrs",
+   "In Gujarat real estate"
+  ],
+  [
+   "96%",
+   "Clients who refer us"
+  ],
+  [
+   "₹2,400 Cr",
+   "Transactions closed"
+  ]
+ ],
+ "testimonials": [
+  {
+   "name": "Meera Patel",
+   "role": "Bought a villa, Gandhinagar",
+   "text": "Every document was checked before I saw a bill. We closed in three weeks."
+  },
+  {
+   "name": "Rahul Shah",
+   "role": "Sold an apartment, Ahmedabad",
+   "text": "They priced it honestly, and it sold above that within a month."
+  },
+  {
+   "name": "Dr. Anita Joshi",
+   "role": "Rents commercial space, Surat",
+   "text": "Clear lease terms and one person to call. That is rare."
+  }
+ ]
+}

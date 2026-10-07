@@ -8,7 +8,7 @@ export const metadata = { title: "HomeNest — Property in Gujarat", description
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${fraunces.variable} ${dm.variable}`}>
-      <body>
+      <body className="flex min-h-dvh flex-col">
         <header className="sticky top-0 z-30 border-b border-ink/10 bg-white/95 backdrop-blur">
           <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5">
             <Link href="/" className="font-display text-xl font-semibold text-pine">HomeNest</Link>
@@ -16,8 +16,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <AuthNav />
           </nav>
         </header>
-        {children}
-        <footer className="bg-ink px-5 py-10 text-sm text-white/70"><div className="mx-auto max-w-7xl">© 2026 HomeNest · Gandhinagar, Gujarat</div></footer>
+        <div className="flex-1">{children}</div>
+       <footer className="bg-ink text-white/70">
+    <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 text-sm md:flex-row md:items-center md:justify-between">
+      <Link href="/" className="font-display text-lg text-white">HomeNest</Link>
+      <nav className="flex flex-wrap gap-x-6 gap-y-2">
+        <Link href="/properties?purpose=sale">Buy</Link>
+        <Link href="/properties?purpose=rent">Rent</Link>
+        <Link href="/sell-property">Sell</Link>
+        <Link href="/properties">Properties</Link>
+        <Link href="/favorites">Saved</Link>
+      </nav>
+      <p>© 2026 HomeNest. All rights reserved.</p>
+    </div>
+  </footer>
       </body>
     </html>
   );

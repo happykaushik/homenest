@@ -68,6 +68,8 @@ export const api = {
   getTestimonials: async (): Promise<typeof site.testimonials> => MOCK ? site.testimonials : http("/testimonials"),
   getTypes: async (): Promise<{ type: string; count: number }[]> =>
     MOCK ? ["Apartment", "Villa", "Plot", "Commercial", "Penthouse", "Farmhouse"].map((type) => ({ type, count: props.filter((p) => p.type === type).length })) : http("/property-types"),
+  submitListing: async (b: Record<string, string>): Promise<{ ok: boolean }> =>
+    MOCK ? { ok: true } : (await http("/sell-requests", undefined, { method: "POST", body: JSON.stringify(b) }), { ok: true }),
 };
 
 export const CITIES = ["Gandhinagar", "Ahmedabad", "Surat", "Vadodara"];
@@ -76,3 +78,4 @@ export const price = (p: Property) => {
   const n = p.price, v = n >= 1e7 ? `${(n / 1e7).toFixed(2)} Cr` : n >= 1e5 ? `${(n / 1e5).toFixed(1)} L` : n.toLocaleString("en-IN");
   return `₹${v}${p.purpose === "rent" ? "/mo" : ""}`;
 };
+
